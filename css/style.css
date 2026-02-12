@@ -737,8 +737,10 @@ tr:hover {
 
 .contact-wrapper {
   display: flex;
+
+  position: relative;
   margin: auto;
-  height: 320px;
+  height: 375px;
   width: 600px;
   border-radius: 24px;
   padding: 20px;
@@ -752,6 +754,14 @@ tr:hover {
   background-color: rgba(255, 255, 255, 0.411);
 }
 
+.contact-wrapper .btn.btn-tri {
+  margin-top: 30px;
+}
+
+.contact-wrapper .form-group:last-child {
+  margin-top: auto;
+}
+
 .contact-wrapper label {
   text-align: left;
 }
@@ -761,10 +771,6 @@ tr:hover {
   flex-direction: column;
   width: 100%;
   margin-bottom: 15px;
-}
-
-.form-group:last-child {
-  flex-direction: column-reverse;
 }
 
 input,
@@ -783,5 +789,32 @@ textarea {
   position: absolute;
   bottom: 20px; /* távolság az alsó széltől */
   left: 50%;
-  transform: translateX(-50%);
+}
+
+/*---------------------*/
+
+.contact-wrapper .btn.btn-tri {
+  margin: auto;
+}
+
+.btn.btn-tri {
+  background: #ffffff;
+  color: var(--accent);
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  margin-top: auto;
+  cursor: pointer;
+}
+
+.btn.btn-tri:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.22);
+  background: var(--accent);
+  color: #ffffff;
+  border-color: transparent;
+  transition:
+    transform 0.45s cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 1s cubic-bezier(0.19, 1, 0.22, 1),
+    background 1s cubic-bezier(0.19, 1, 0.22, 1),
+    border-color 1s cubic-bezier(0.19, 1, 0.22, 1),
+    color 0.45s cubic-bezier(0.19, 1, 0.22, 1);
 }
