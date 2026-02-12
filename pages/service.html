@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HNB – Honda Naked Bikes</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/slideshow.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .cards-row {
+        display: flex;
+        width: 1200px;
+        gap: 20px;
+        justify-content: center;
+
+        margin: auto;
+      }
+      .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 16px;
+        width: 30%;
+        min-width: 280px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+      .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+      .card-map {
+        width: 100%;
+        height: 200px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+      }
+      .card-label {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+
+      .card-label p a {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="site-header"></div>
+
+    <section>
+      <div class="srv-img">
+        <div class="maintenance-img-overlay"></div>
+
+        <div class="hero-content" style="width: 50%">
+          <h1>Services</h1>
+          <p>The care your bike needs.</p>
+          <a href="#" class="btn">Contact service</a>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <div class="cards-row">
+        <div class="card">
+          <div id="map1" class="card-map"></div>
+          <div class="card-title">Honda Dream</div>
+          <div class="card-label">
+            <img
+              src="../assets/svg/map-marker-6-svgrepo-com.svg"
+              alt="engine"
+              width="20"
+              height="20"
+            />
+            <p>1013 Budapest, Attila út 14‑16.</p>
+          </div>
+          <div class="card-label">
+            <img
+              src="../assets/svg/telephone-receiver-material-svgrepo-com.svg"
+              alt="engine"
+              width="20"
+              height="20"
+            />
+            <p>+36 1 789 5636</p>
+          </div>
+          <div class="card-label">
+            <img
+              src="../assets/svg/email-svgrepo-com.svg"
+              alt="engine"
+              width="20"
+              height="20"
+            />
+            <p>
+              <a href="mailto:kattila@hondadream.hu">kattila@hondadream.hu</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div id="map2" class="card-map"></div>
+          <div class="card-title">Karasna</div>
+          <div class="card-label">
+            <img
+              src="../assets/svg/map-marker-6-svgrepo-com.svg"
+              alt="engine"
+              width="20"
+              height="20"
+            />
+            <p></p>1132 Budapest, Váci út 40.</p>
+          </div>
+
+          <div class="card-label">
+            <img
+              src="../assets/svg/telephone-receiver-material-svgrepo-com.svg"
+              alt="engine"
+              width="20"
+              height="20"
+            />
+            <p>+36 20 351 7844</p>
+          </div>
+          <div class="card-label">
+            <img
+              src="../assets/svg/email-svgrepo-com.svg"
+              alt="engine"
+              width="20"
+              height="20"
+            />
+            <p>
+              <a href="mailto:info@karasna.hu">info@karasna.hu</a>
+            </p>
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div id="map3" class="card-map"></div>
+          <div class="card-title">Honda Szallerbeck</div>
+          <div class="card-label">
+            <img
+              src="../assets/svg/map-marker-6-svgrepo-com.svg"
+              alt="engine"
+              width="20"
+              height="20"
+            />
+           <p>1185 Budapest, Üllői út 812.</p>
+          </div>
+
+          <div class="card-label">
+            <img
+              src="../assets/svg/telephone-receiver-material-svgrepo-com.svg"
+              alt="engine"
+              width="20"
+              height="20"
+            />
+            <p>+36 1 291 5555</p>
+          </div>
+          <div class="card-label">
+            <img
+              src="../assets/svg/email-svgrepo-com.svg"
+              alt="engine"
+              width="20"
+              height="20"
+            />
+            <p>
+              <a href="mailto:info@honda‑szallerbeck.hu">info@honda‑szallerbeck.hu</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Honda Dream
+        var map1 = L.map("map1").setView([47.498427, 19.031875], 15);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          attribution: "&copy; OpenStreetMap",
+        }).addTo(map1);
+        L.marker([47.498427, 19.031875]).addTo(map1).bindPopup("Honda Dream");
+
+        // Karasna
+        var map2 = L.map("map2").setView([47.516761, 19.059483], 15);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          attribution: "&copy; OpenStreetMap",
+        }).addTo(map2);
+        L.marker([47.516761, 19.059483]).addTo(map2).bindPopup("Karasna");
+
+        // Honda Szallerbeck
+        var map3 = L.map("map3").setView([47.422272, 19.238136], 15);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          attribution: "&copy; OpenStreetMap",
+        }).addTo(map3);
+        L.marker([47.422272, 19.238136])
+          .addTo(map3)
+          .bindPopup("Honda Szallerbeck");
+      });
+    </script>
+
+    <script src="../js/include.js"></script>
+    <script src="../js/slideshow.js"></script>
+  </body>
+</html>

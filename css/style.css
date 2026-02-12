@@ -648,3 +648,24 @@ tr:hover {
 .smallbikethumbnail-card:hover .blue-overlay {
   background-color: rgba(226, 232, 240, 0.5); /* kicsit erősebb hover-nél */
 }
+
+.srv-img {
+  position: relative;
+  width: 100vw; /* teljes képernyő szélesség */
+  min-height: 50vh;
+  background-image: url("../assets/img/maintenance/maintenance1.jpg");
+  background-size: cover; /* a kép kitölti a divet arányosan */
+  background-position: center; /* kép középre pozicionálása */
+  background-repeat: no-repeat;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.srv-img .btn {
+  color: #ffffff;
+}
+
+.srv-img .btn:hover {
+  color: var(--accent);
+}
