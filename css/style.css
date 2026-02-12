@@ -1,0 +1,650 @@
+:root {
+  --bg: #f4f6f8;
+  --glass: rgba(255, 255, 255, 0.7);
+  --border: rgba(0, 0, 0, 0.08);
+  --accent: #2563eb;
+  --text: #111827;
+  --muted: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at top, #ffffff, #e5e7eb 70%);
+  color: var(--text);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(14px);
+  background: var(--glass);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+.nav a {
+  margin-left: 1.2rem;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+/*.hero-card {
+  width: 100%;
+  min-height: 75vh;
+  position: relative;
+  background-image: url('../assets/img/hero1.jpg');
+  center / cover no-repeat;
+  overflow: hidden;
+}*/
+
+.hero-card {
+  width: 100%;
+  min-height: 75vh;
+  position: relative;
+  background-image: url("../assets/img/hero1.jpg");
+  background-position: center;
+  background-size: contain; /* makes image smaller and fully visible */
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: 105%;
+  animation: zoom 22s ease-in-out infinite alternate;
+}
+
+@keyframes zoom {
+  from {
+    background-size: 105%;
+  }
+  to {
+    background-size: 115%;
+  }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.15)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  padding: 6rem 2rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.8rem, 5vw, 3.8rem);
+}
+
+.hero-content p {
+  margin: 1.5rem 0 2rem;
+  color: var(--muted);
+  max-width: 520px;
+}
+
+.hero .btn {
+  color: #ffffff;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #020617;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.22);
+  background: #ffffff;
+  color: var(--accent);
+  border-color: transparent;
+  transition:
+    transform 0.45s cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 1s cubic-bezier(0.19, 1, 0.22, 1),
+    background 1s cubic-bezier(0.19, 1, 0.22, 1),
+    border-color 1s cubic-bezier(0.19, 1, 0.22, 1),
+    color 0.45s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.spec-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.2rem;
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.8rem 1.5rem;
+  z-index: 3;
+}
+
+.spec {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.featured-bike {
+  padding: 3rem 2rem 1rem;
+  background: var(--bg);
+}
+
+.featured-grid {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.8rem;
+}
+
+.bike-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 24px;
+  /* border: 1px solid var(--border);*/
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+}
+
+.bike-image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.bike-info {
+  padding: 1.8rem 1.8rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+.bike-info h2 {
+  font-size: 1.6rem;
+}
+
+.bike-info p {
+  margin: 1rem 0 1.8rem;
+  color: var(--muted);
+  max-width: 420px;
+}
+
+.btn.btn-secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  margin-top: auto;
+  align-self: center;
+  cursor: pointer;
+}
+
+.btn.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.22);
+  background: var(--accent);
+  color: #ffffff;
+  border-color: transparent;
+  transition:
+    transform 0.45s cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 1s cubic-bezier(0.19, 1, 0.22, 1),
+    background 1s cubic-bezier(0.19, 1, 0.22, 1),
+    border-color 1s cubic-bezier(0.19, 1, 0.22, 1),
+    color 0.45s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn.btn-secondary:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.2);
+  background-color: #1d4ed8;
+  color: #ffffff;
+  border-color: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+  .featured-grid {
+    margin: 1rem auto 0;
+    grid-template-columns: 1fr;
+  }
+
+  .bike-card {
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.18);
+  }
+}
+
+.footer-dark {
+  background-color: #c8c8c8;
+  padding-top: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-column h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.footer-column p,
+.footer-column a {
+  margin: 10px 0;
+  color: #5a5a5a;
+  text-decoration: none;
+  text-align: center;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+/* Opció: kisebb képernyőn oszlopok egymás alá */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-column {
+    margin: 15px 0;
+  }
+}
+
+.speccard {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 150px;
+  align-items: center; /* függőleges középre */
+  padding: 1rem;
+  /* background-color: #c8c8c8;*/
+  border-style: solid;
+  border-radius: 12px; /* opcionális, szebb kinézet */
+  text-align: center;
+}
+
+.speccard-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 1000px;
+  align-content: center;
+  margin: auto;
+}
+
+.speccard-container p {
+  margin-top: 10px;
+}
+
+/* =========================
+   ACCESSORIES SECTION
+========================= */
+
+.accessories-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.accessories-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.accessories-container.reverse {
+  flex-direction: row-reverse;
+}
+
+.accessories-img {
+  width: 45%;
+  border-radius: 24px;
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.12);
+  object-fit: cover;
+}
+
+.accessories-txt {
+  width: 45%;
+}
+
+.accessories-txt h2 {
+  margin-bottom: 1rem;
+}
+
+.accessories-txt p {
+  margin-bottom: 2rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.accessories-container.reverse .accessories-txt {
+  text-align: right;
+}
+
+/* =========================
+   accortion SECTION
+========================= */
+
+/*main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;   /* vízszintesen középre 
+  align-items: center;       /* függőlegesen középre 
+}
+*/
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.accordion {
+  margin: 30px auto;
+
+  width: 1200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.accordion h2 {
+  text-align: center;
+}
+
+.accordion-item {
+  display: flex;
+  align-items: center; /* függőlegesen középre */
+  gap: 12px;
+
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: left;
+  background-color: #e2e8f0;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-item:hover {
+  background-color: #cbd5e1;
+}
+
+.panel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 0 15px;
+  gap: 20px;
+}
+
+.panel p {
+  margin: 10px 0;
+}
+
+.maintenance-img {
+  position: relative;
+  width: 100vw; /* teljes képernyő szélesség */
+  min-height: 75vh;
+  background-image: url("../assets/img/maintenance/maintenance2.jpg");
+  background-size: cover; /* a kép kitölti a divet arányosan */
+  background-position: center; /* kép középre pozicionálása */
+  background-repeat: no-repeat;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.maintenance-txt {
+  position: relative;
+  z-index: 2;
+  color: #000000;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.maintenance-img-overlay {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; rövidítve */
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.15)
+  );
+}
+
+.maintenance-img .btn {
+  color: #ffffff;
+}
+
+.maintenance-img .btn:hover {
+  color: var(--accent);
+}
+
+.maintenance-img p {
+  text-justify: auto;
+}
+
+table {
+  width: 1200px;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px; /* lekerekítés mértéke */
+  overflow: hidden;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: center;
+}
+
+th {
+  background-color: #e2e8f0;
+  color: #000000;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #e2e8f0;
+}
+
+.table-container {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+}
+
+.table-container h2 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.acc-img {
+  position: relative;
+  width: 100vw; /* teljes képernyő szélesség */
+  min-height: 75vh;
+  background-image: url("../assets/img/accessories/accessories.jpg");
+  background-size: cover; /* a kép kitölti a divet arányosan */
+  background-position: center; /* kép középre pozicionálása */
+  background-repeat: no-repeat;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.acc-img .btn {
+  color: #ffffff;
+}
+
+.acc-img .btn:hover {
+  color: var(--accent);
+}
+
+.smallbikethumbnail-container {
+  display: flex; /* egymás mellé */
+  flex-direction: row;
+  gap: 1.25rem; /* távolság a kártyák között */
+  justify-content: center; /* középre a konténeren belül */
+  flex-wrap: wrap; /* kisebb képernyőn törjön sorba */
+  margin: 2rem 0; /* opcionális: margó felül-alul */
+}
+
+.smallbikethumbnail-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+}
+
+.smallbikethumbnail-img {
+  width: 100%;
+}
+
+.smallbikethumbnail-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* kitölti a card szélességét */
+}
+
+.smallbikethumbnail-txt {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.smallbikethumbnail-txt p {
+  margin: 0;
+  color: #111827;
+  font-weight: 600;
+}
+
+.smallbikethumbnail-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  position: relative; /* overlay-hez szükséges */
+  overflow: hidden;
+}
+
+.smallbikethumbnail-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.smallbikethumbnail-card:hover .smallbikethumbnail-img img {
+  transition: transform 0.3s ease;
+}
+
+.blue-overlay {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background-color: rgba(126, 170, 228, 0.3); /* kék, 30% átlátszóság */
+  pointer-events: none; /* ne akadályozza a hover-t vagy kattintást */
+  transition: background-color 0.3s ease;
+}
+
+.smallbikethumbnail-card:hover .blue-overlay {
+  background-color: rgba(226, 232, 240, 0.5); /* kicsit erősebb hover-nél */
+}

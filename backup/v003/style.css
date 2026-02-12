@@ -1,0 +1,136 @@
+:root {
+  --bg: #f4f6f8;
+  --glass: rgba(255,255,255,0.7);
+  --border: rgba(0,0,0,0.08);
+  --accent: #2563eb;
+  --text: #111827;
+  --muted: #6b7280;
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #ffffff, #e5e7eb 70%);
+  color: var(--text);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(14px);
+  background: var(--glass);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+.nav a {
+  margin-left: 1.2rem;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.hero-card {
+  width: 100%;
+  min-height: 75vh;
+  position: relative;
+  background: url("https://www.motorcyclistonline.com/resizer/v3ScGSVHw_UndOKSFqTPdgGEnWY=/1440x0/filters:focal(830x587:840x597)/cloudfront-us-east-1.images.arcpublishing.com/octane/WXSQ4RWOTJBCBEEQEYDQXRWX2M.jpg")
+    center / cover no-repeat;
+  overflow: hidden;
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: 105%;
+  animation: zoom 22s ease-in-out infinite alternate;
+}
+
+@keyframes zoom {
+  from { background-size: 105%; }
+  to { background-size: 115%; }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0.9),
+    rgba(255,255,255,0.6),
+    rgba(255,255,255,0.15)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  padding: 6rem 2rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.8rem, 5vw, 3.8rem);
+}
+
+.hero-content p {
+  margin: 1.5rem 0 2rem;
+  color: var(--muted);
+  max-width: 520px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), #60a5fa);
+  color: #020617;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.spec-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.2rem;
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.8rem 1.5rem;
+  z-index: 3;
+}
+
+.spec {
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}

@@ -1,0 +1,21 @@
+hondanakedbikes
+
+
+
+
+főoldal: *cb500f, *cb650, *cb1000, cb 1000f, hornet 750, hornet 1000
+
+típusok (motorok): 1 carousel, alatta flexboxban oszloponként az adatok. motorblokk, köbcenti, hengerszá, tlejesítmény, gumi név /méret
+ 6 aloldal szükséges: cb650r, cb500f, cb1000r, cb1000f, hornet750, hornet 1000
+ típusonként 3 kép - összesen 18 kép kell
+
+
+kiegészítők (táskák, accessories)
+
+szervízek (európa)
+
+karbantartás (lánckenés, javasult gumi, lánc, lánckerék, fékbetét, olaj)
+
+cikkek
+
+gyik
