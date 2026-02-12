@@ -818,3 +818,16 @@ textarea {
     border-color 1s cubic-bezier(0.19, 1, 0.22, 1),
     color 0.45s cubic-bezier(0.19, 1, 0.22, 1);
 }
+
+.bikes-img {
+  position: relative;
+  width: 100vw; /* teljes képernyő szélesség */
+  min-height: 75vh;
+  background-image: url("../assets/img/bikes/bikes.jpg");
+  background-size: cover; /* a kép kitölti a divet arányosan */
+  background-position: center; /* kép középre pozicionálása */
+  background-repeat: no-repeat;
+
+  justify-content: center;
+  align-items: center;
+}
