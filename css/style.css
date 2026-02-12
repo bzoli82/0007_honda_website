@@ -669,3 +669,119 @@ tr:hover {
 .srv-img .btn:hover {
   color: var(--accent);
 }
+
+.cards-row {
+  display: flex;
+  width: 1200px;
+  gap: 20px;
+  justify-content: center;
+
+  margin: auto;
+
+  padding: 40px;
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  width: 30%;
+  min-width: 280px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.card-map {
+  width: 100%;
+  height: 200px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.card-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.card-label p a {
+  text-decoration: none;
+  color: black;
+}
+
+.card-services {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  display: flex;
+  width: 100%;
+  height: 75vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background-image: url("../assets/img/hero1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.contact-wrapper {
+  display: flex;
+  margin: auto;
+  height: 320px;
+  width: 600px;
+  border-radius: 24px;
+  padding: 20px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.411);
+}
+
+.contact-wrapper label {
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-group:last-child {
+  flex-direction: column-reverse;
+}
+
+input,
+textarea {
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid;
+  padding-top: 10px;
+  outline: none;
+  resize: none;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.contact-wrapper .btn.btn-secondary {
+  position: absolute;
+  bottom: 20px; /* távolság az alsó széltől */
+  left: 50%;
+  transform: translateX(-50%);
+}
