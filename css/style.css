@@ -401,6 +401,29 @@ footer {
 }
 */
 
+.section-title {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.acc-mid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* A gyerekek (kép és accordion) magasságát egymáshoz igazítja */
+  gap: 40px;
+
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.acc-img-left img {
+  width: 100%;
+  height: 100%; /* a konténer magasságát veszi át */
+  object-fit: cover; /* levágja a széleket, megtartja a képarányt */
+  border-radius: 24px;
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.12);
+}
+
 .accordion-container {
   display: flex;
   flex-direction: column;
@@ -409,13 +432,6 @@ footer {
 }
 
 .accordion {
-  margin: 30px auto;
-
-  width: 1200px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -449,7 +465,8 @@ footer {
 }
 
 .panel {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   flex-direction: row;
   align-items: center;
   max-height: 0;
@@ -465,6 +482,12 @@ footer {
 
 .panel p {
   margin: 10px 0;
+}
+
+.panel ul li {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 .maintenance-img {
@@ -516,7 +539,7 @@ table {
   margin: 2rem auto;
   border-collapse: collapse;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  background-color: #fff;
+  background-color: #ffff;
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 12px; /* lekerekítés mértéke */
